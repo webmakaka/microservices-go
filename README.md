@@ -65,3 +65,5 @@ $ curl \
     --url http://localhost:8081/trip/preview \
     | jq
 ```
+
+### 33 - Preparing for External API Failures
