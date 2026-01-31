@@ -67,3 +67,5 @@ $ curl \
 ```
 
 ### 33 - Preparing for External API Failures
+
+### 34 - Gracefull shutdown
