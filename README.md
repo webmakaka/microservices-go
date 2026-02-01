@@ -100,3 +100,9 @@ $ wscat -c "ws://localhost:8081/ws/drivers?userID=123&packageSlug=van"
 Connected (press CTRL+C to quit)
 < {"type":"driver.cmd.register","data":{"id":"123","name":"John Doe","profilePicture":"https://randomuser.me/api/portraits/lego/1.jpg","carPlate":"ABC123","packageSlug":"van"}}
 ```
+
+<br/>
+
+### 37 - Handling CORS
+
+
