@@ -5,8 +5,12 @@
 ## 04 - Development Environment Setup
 
 ```bash
-$ minikube -p marley-minikube addons enable registry
-$ eval $(minikube -p marley-minikube docker-env)
+$ export \
+    PROFILE=${USER}-minikube
+
+$ minikube --profile ${PROFILE} addons enable registry
+
+$ eval $(minikube --profile ${PROFILE} docker-env)
 
 $ go mod tidy
 $ tilt up
@@ -69,3 +73,30 @@ $ curl \
 ### 33 - Preparing for External API Failures
 
 ### 34 - Gracefull shutdown
+
+<br/>
+
+## 06 - WebSockets
+
+### 35 - Understanding WebSockets
+
+### 36 - Implementing WebSocket connections
+
+```
+$ go get github.com/gorilla/websocket
+```
+
+<br/>
+
+```
+$ sudo apt install npm
+$ sudo npm install -g wscat
+```
+
+<br/>
+
+```
+$ wscat -c "ws://localhost:8081/ws/drivers?userID=123&packageSlug=van"
+Connected (press CTRL+C to quit)
+< {"type":"driver.cmd.register","data":{"id":"123","name":"John Doe","profilePicture":"https://randomuser.me/api/portraits/lego/1.jpg","carPlate":"ABC123","packageSlug":"van"}}
+```
