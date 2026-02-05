@@ -156,3 +156,7 @@ libprotoc 3.12.4
 ```
 $ make generate-proto
 ```
+
+<br/>
+
+### 41 - Implementing the Gateway Trip gRPC Client
