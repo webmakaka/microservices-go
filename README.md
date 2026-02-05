@@ -160,3 +160,11 @@ $ make generate-proto
 <br/>
 
 ### 41 - Implementing the Gateway Trip gRPC Client
+
+```
+$ go get google.golang.org/grpc
+```
+
+<br/>
+
+### 42 - gRPC Server implementation on Trip Service
