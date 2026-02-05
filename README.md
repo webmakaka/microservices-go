@@ -168,3 +168,11 @@ $ go get google.golang.org/grpc
 <br/>
 
 ### 42 - gRPC Server implementation on Trip Service
+
+<br/>
+
+### 43 - Preview Trip Handler - Part 1
+
+<br/>
+
+### 44 - Preview Trip Handler - Part 2
