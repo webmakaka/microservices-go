@@ -196,3 +196,7 @@ $ go get google.golang.org/grpc
 ```
 $ make generate-proto
 ```
+
+<br/>
+
+## 08 - Kubernetes Essentials
