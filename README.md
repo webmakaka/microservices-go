@@ -188,3 +188,11 @@ $ go get google.golang.org/grpc
 <br/>
 
 ### 47 - Ride Pricing Estimation
+
+<br/>
+
+### 48 - Implementing the TripStart gRPC handler
+
+```
+$ make generate-proto
+```

@@ -28,6 +28,30 @@ func NewGRPCHandler(server *grpc.Server, service domain.TripService) *gRPCHandle
 	return handler
 }
 
+func (h *gRPCHandler) CreateTrip(ctx context.Context, req *pb.CreateTripRequest) (*pb.CreateTripResponse, error) {
+
+	fareID := req.GetRideFareID()
+	userID := req.GetUserID()
+	rideFare, err := h.service.GetAndValidateFare(ctx, fareID, userID)
+
+	if err != nil {
+		log.Println(err)
+		return nil, status.Errorf(codes.Internal, "[Me] Failed to validate the fare: %v", err)
+	}
+
+	trip, err := h.service.CreateTrip(ctx, rideFare)
+
+	if err != nil {
+		log.Println(err)
+		return nil, status.Errorf(codes.Internal, "[Me] Failed to create the trip: %v", err)
+	}
+
+	return &pb.CreateTripResponse{
+		TripID: trip.ID.Hex(),
+	}, nil
+
+}
+
 func (h *gRPCHandler) PreviewTrip(ctx context.Context, req *pb.PreviewTripRequest) (*pb.PreviewTripResponse, error) {
 
 	pickup := req.GetStartLocation()
@@ -45,21 +69,21 @@ func (h *gRPCHandler) PreviewTrip(ctx context.Context, req *pb.PreviewTripReques
 
 	userID := req.GetUserID()
 
-	t, err := h.service.GetRoute(ctx, pickupCoord, destinationCoord)
+	route, err := h.service.GetRoute(ctx, pickupCoord, destinationCoord)
 	if err != nil {
 		log.Println(err)
 		return nil, status.Errorf(codes.Internal, "[Me] Failed to get route: %v", err)
 	}
 
-	estimatedFares := h.service.EstimatePackagesPriceWithRoute(t)
+	estimatedFares := h.service.EstimatePackagesPriceWithRoute(route)
 
-	fares, err := h.service.GenerateTripFares(ctx, estimatedFares, userID)
+	fares, err := h.service.GenerateTripFares(ctx, estimatedFares, userID, route)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "[Me] Failed to generate the ride fares: %v", err)
 	}
 
 	return &pb.PreviewTripResponse{
-		Route:     t.ToProto(),
+		Route:     route.ToProto(),
 		RideFares: domain.ToRideFaresProto(fares),
 	}, nil
 }
