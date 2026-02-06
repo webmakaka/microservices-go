@@ -1,4 +1,4 @@
-# "Microservices with Go" course project
+# "Microservices with Go"
 
 <br/>
 
@@ -105,4 +105,94 @@ Connected (press CTRL+C to quit)
 
 ### 37 - Handling CORS
 
+<br/>
 
+## 07 - Service Communication with gRPC
+
+<br/>
+
+### 38 - gRPC Introduction
+
+https://grpc.io/docs/languages/go/quickstart/
+
+<br/>
+
+```
+$ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+$ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+```
+
+<br/>
+
+```
+$ export PATH="$PATH:$(go env GOPATH)/bin"
+```
+
+<br/>
+
+https://protobuf.dev/installation/
+
+<br/>
+
+https://github.com/protocolbuffers/protobuf/releases
+
+```
+$ sudo apt install -y protobuf-compiler
+```
+
+```
+$ protoc --version
+libprotoc 3.12.4
+```
+
+<br/>
+
+### 39 - Protocol Buffer file generation process
+
+<br/>
+
+### 40 - Defining the Trip Proto
+
+```
+$ make generate-proto
+```
+
+<br/>
+
+### 41 - Implementing the Gateway Trip gRPC Client
+
+```
+$ go get google.golang.org/grpc
+```
+
+<br/>
+
+### 42 - gRPC Server implementation on Trip Service
+
+<br/>
+
+### 43 - Preview Trip Handler - Part 1
+
+<br/>
+
+### 44 - Preview Trip Handler - Part 2
+
+<br/>
+
+### 45 - Create the Trip Start boilerplate
+
+<br/>
+
+### 46 - Why & What are Ride Fares
+
+<br/>
+
+### 47 - Ride Pricing Estimation
+
+<br/>
+
+### 48 - Implementing the TripStart gRPC handler
+
+```
+$ make generate-proto
+```

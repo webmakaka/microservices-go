@@ -19,11 +19,11 @@ spec:
             - containerPort: 8081
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "125m"
+              memory: '128Mi'
+              cpu: '125m'
             limits:
-              memory: "128Mi"
-              cpu: "125m"
+              memory: '128Mi'
+              cpu: '125m'
           env:
             # Accessing an env variable from the app-config config map
             - name: GATEWAY_HTTP_ADDR
