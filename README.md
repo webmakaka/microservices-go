@@ -176,3 +176,15 @@ $ go get google.golang.org/grpc
 <br/>
 
 ### 44 - Preview Trip Handler - Part 2
+
+<br/>
+
+### 45 - Create the Trip Start boilerplate
+
+<br/>
+
+### 46 - Why & What are Ride Fares
+
+<br/>
+
+### 47 - Ride Pricing Estimation
