@@ -200,3 +200,11 @@ $ make generate-proto
 <br/>
 
 ## 08 - Kubernetes Essentials
+
+<br/>
+
+## 09 - Drivers Service
+
+```
+$ make generate-proto
+```
