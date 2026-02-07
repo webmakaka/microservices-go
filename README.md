@@ -208,3 +208,11 @@ $ make generate-proto
 ```
 $ make generate-proto
 ```
+
+<br/>
+
+## 10 - Asynchronous Communication
+
+<br/>
+
+### 59 - Setting up RabbitMQ
