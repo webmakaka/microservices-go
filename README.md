@@ -226,3 +226,7 @@ $ go get github.com/rabbitmq/amqp091-go
 <br/>
 
 ### 60 - Connecting to RabbitMQ
+
+<br/>
+
+### 61 - RabbitMQ Services Dependency
