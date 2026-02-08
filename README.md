@@ -216,3 +216,13 @@ $ make generate-proto
 <br/>
 
 ### 59 - Setting up RabbitMQ
+
+<br/>
+
+```
+$ go get github.com/rabbitmq/amqp091-go
+```
+
+<br/>
+
+### 60 - Connecting to RabbitMQ
