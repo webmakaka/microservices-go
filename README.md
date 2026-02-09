@@ -230,3 +230,11 @@ $ go get github.com/rabbitmq/amqp091-go
 <br/>
 
 ### 61 - RabbitMQ Services Dependency
+
+<br/>
+
+### 62 - Publishing the First Message
+
+```
+$ make generate-proto
+```
