@@ -246,3 +246,7 @@ $ make generate-proto
 <br/>
 
 ### 64 - Consuming Messages
+
+<br/>
+
+### 65 - Message Distribution & Acknowledgment
