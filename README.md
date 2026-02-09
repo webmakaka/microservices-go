@@ -242,3 +242,7 @@ $ make generate-proto
 <br/>
 
 ### 63 - Message Durability
+
+<br/>
+
+### 64 - Consuming Messages
