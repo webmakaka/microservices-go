@@ -250,3 +250,7 @@ $ make generate-proto
 <br/>
 
 ### 65 - Message Distribution & Acknowledgment
+
+<br/>
+
+### 66 - Fair Dispatch
