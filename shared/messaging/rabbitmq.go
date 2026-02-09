@@ -41,14 +41,15 @@ func NewRabbitMQ(uri string) (*RabbitMQ, error) {
 func (r *RabbitMQ) PublishMessage(ctx context.Context, routingKey string, message string) error {
 	return r.Channel.PublishWithContext(ctx,
 		"", "hello", false, false, amqp.Publishing{
-			ContentType: "text/plain",
-			Body:        []byte(message),
+			ContentType:  "text/plain",
+			Body:         []byte(message),
+			DeliveryMode: amqp.Persistent,
 		})
 }
 
 func (r *RabbitMQ) setupExchangesAndQueues() error {
 	_, err := r.Channel.QueueDeclare(
-		"hello", false, false, false, false, nil,
+		"hello", true, false, false, false, nil,
 	)
 
 	if err != nil {

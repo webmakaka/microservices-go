@@ -238,3 +238,7 @@ $ go get github.com/rabbitmq/amqp091-go
 ```
 $ make generate-proto
 ```
+
+<br/>
+
+### 63 - Message Durability
