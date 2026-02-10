@@ -34,7 +34,7 @@ func main() {
 		log.Fatalf("[Me]: Failed to listen: %v", err)
 	}
 
-	service := NewService()
+	svc := NewService()
 
 	// RabbitMQ connection
 	rabbitmq, err := messaging.NewRabbitMQ(rabbitMQ_URI)
@@ -47,9 +47,9 @@ func main() {
 
 	// Starting the gRPC server
 	grpcServer := grpcserver.NewServer()
-	NewGRPCHandler(grpcServer, service)
+	NewGRPCHandler(grpcServer, svc)
 
-	consumer := NewTripConsumer(rabbitmq)
+	consumer := NewTripConsumer(rabbitmq, svc)
 	go func() {
 		if err := consumer.Listen(); err != nil {
 			log.Fatalf("[Me] Failed to listen to the message: %v", err)
