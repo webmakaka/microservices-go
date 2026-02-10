@@ -262,3 +262,7 @@ $ make generate-proto
 <br/>
 
 ### 68 - Implementing the Exchange & Topics flow
+
+<br/>
+
+### 69 - JSON Message Sending & Consuming
