@@ -254,3 +254,11 @@ $ make generate-proto
 <br/>
 
 ### 66 - Fair Dispatch
+
+<br/>
+
+### 67 - The Pub - Sub Pattern
+
+<br/>
+
+### 68 - Implementing the Exchange & Topics flow
