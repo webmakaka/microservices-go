@@ -270,3 +270,31 @@ $ make generate-proto
 <br/>
 
 ### 70 - Finding a Suitable Driver
+
+<br/>
+
+## 11 - Real-time Notifications
+
+<br/>
+
+### 71 - Understanding how to notify our users
+
+<br/>
+
+### 72 - WebSocket Connection Manager
+
+<br/>
+
+### 73 - Queue Consumer
+
+<br/>
+
+### 74 - Handling incoming messages from the driver
+
+<br/>
+
+### 75 - Listening for Trip Accept event
+
+<br/>
+
+### 76 - Declining a Trip Request
