@@ -310,3 +310,7 @@ $ make generate-proto
 <br/>
 
 ### 78 - Payment Service setup
+
+<br/>
+
+### 79 - Adding the Stripe secret key
