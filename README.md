@@ -298,3 +298,15 @@ $ make generate-proto
 <br/>
 
 ### 76 - Declining a Trip Request
+
+<br/>
+
+## 12 - Payments
+
+<br/>
+
+### 77 - Payment Flow Overview
+
+<br/>
+
+### 78 - Payment Service setup
