@@ -46,7 +46,7 @@ func NewRabbitMQ(uri string) (*RabbitMQ, error) {
 
 type MessageHandler func(context.Context, amqp.Delivery) error
 
-func (r *RabbitMQ) ConsumeMessage(queueName string, handler MessageHandler) error {
+func (r *RabbitMQ) ConsumeMessages(queueName string, handler MessageHandler) error {
 
 	err := r.Channel.Qos(
 		1,     // prefetch count
@@ -142,6 +142,22 @@ func (r *RabbitMQ) setupExchangesAndQueues() error {
 	}
 
 	if err := r.declareAndBindQueue(NotifyDriverAssignQueue, []string{contracts.TripEventDriverAssigned}, TripExchange); err != nil {
+		return err
+	}
+
+	if err := r.declareAndBindQueue(
+		PaymentTripResponseQueue,
+		[]string{contracts.PaymentCmdCreateSession},
+		TripExchange,
+	); err != nil {
+		return err
+	}
+
+	if err := r.declareAndBindQueue(
+		NotifyPaymentSessionCreatedQueue,
+		[]string{contracts.PaymentEventSessionCreated},
+		TripExchange,
+	); err != nil {
 		return err
 	}
 

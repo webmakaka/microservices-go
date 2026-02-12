@@ -27,7 +27,7 @@ func NewDriverConsumer(rabbitmq *messaging.RabbitMQ, service domain.TripService)
 }
 
 func (c *driverConsumer) Listen() error {
-	return c.rabbitmq.ConsumeMessage(messaging.DriverTripResponseQueue, func(ctx context.Context, msg amqp091.Delivery) error {
+	return c.rabbitmq.ConsumeMessages(messaging.DriverTripResponseQueue, func(ctx context.Context, msg amqp091.Delivery) error {
 
 		var message contracts.AmqpMessage
 
@@ -99,7 +99,22 @@ func (c *driverConsumer) handleTripAccepted(ctx context.Context, tripID string, 
 		return err
 	}
 
-	// TODO:
+	marshalledPayload, err := json.Marshal(messaging.PaymentTripResponseData{
+		TripID:   tripID,
+		UserID:   trip.UserID,
+		DriverID: driver.Id,
+		Amount:   trip.RideFare.TotalPriceInCents,
+		Currency: "USD",
+	})
+
+	if err := c.rabbitmq.PublishMessage(ctx, contracts.PaymentCmdCreateSession,
+		contracts.AmqpMessage{
+			OwnerID: trip.UserID,
+			Data:    marshalledPayload,
+		},
+	); err != nil {
+		return err
+	}
 
 	return nil
 }

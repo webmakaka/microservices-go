@@ -24,7 +24,7 @@ func NewTripConsumer(rabbitmq *messaging.RabbitMQ, service *Service) *tripConsum
 }
 
 func (c *tripConsumer) Listen() error {
-	return c.rabbitmq.ConsumeMessage(messaging.FindAvailableDriversQueue, func(ctx context.Context, msg amqp091.Delivery) error {
+	return c.rabbitmq.ConsumeMessages(messaging.FindAvailableDriversQueue, func(ctx context.Context, msg amqp091.Delivery) error {
 
 		var tripEvent contracts.AmqpMessage
 
