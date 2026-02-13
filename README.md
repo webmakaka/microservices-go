@@ -330,3 +330,19 @@ $ go get github.com/stripe/stripe-go/v81
 <br/>
 
 ### 82 - Stripe Payment Webhook
+
+<br/>
+
+## 13 - Observability
+
+<br/>
+
+### 83 - Intro to Distributed Tracing
+
+<br/>
+
+### 84 - Setting up Tracing
+
+```
+$ go get go.opentelemetry.io/otel/sdk/trace
+```
