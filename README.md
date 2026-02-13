@@ -341,6 +341,7 @@ $ go get github.com/stripe/stripe-go/v81
 $ go get go.opentelemetry.io/otel/sdk/trace
 $ go get go.opentelemetry.io/otel/exporters/jaeger
 $ go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
+$ go get go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc
 ```
 
 <br/>
@@ -358,3 +359,7 @@ $ go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
 <br/>
 
 ### 86 - HTTP Instrumentation
+
+<br/>
+
+### 87 - gRPC Instrumentation

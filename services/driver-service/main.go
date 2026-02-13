@@ -63,7 +63,7 @@ func main() {
 	log.Println("[Me] Starting RabbitMQ connection")
 
 	// Starting the gRPC server
-	grpcServer := grpcserver.NewServer()
+	grpcServer := grpcserver.NewServer(tracing.WithTracingInterceptors()...)
 	NewGRPCHandler(grpcServer, svc)
 
 	consumer := NewTripConsumer(rabbitmq, svc)
