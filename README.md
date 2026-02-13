@@ -363,3 +363,7 @@ $ go get go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otel
 <br/>
 
 ### 87 - gRPC Instrumentation
+
+<br/>
+
+### 88 - RabbitMQ Instrumentation
