@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
@@ -19,7 +20,12 @@ type Config struct {
 
 func InitTracer(cfg Config) (func(context context.Context) error, error) {
 
-	traceExporter := nil
+	// Exporter
+	traceExporter, err := newExporter(cfg.JaegerEndpoint)
+
+	if err != nil {
+		return nil, err
+	}
 
 	// Trace Provider
 	traceProvider, err := newTracerProvider(cfg, traceExporter)
@@ -35,6 +41,10 @@ func InitTracer(cfg Config) (func(context context.Context) error, error) {
 	otel.SetTextMapPropagator(prop)
 
 	return traceProvider.Shutdown, nil
+}
+
+func newExporter(endpoint string) (sdktrace.SpanExporter, error) {
+	return jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(endpoint)))
 }
 
 func newPropagator() propagation.TextMapPropagator {
