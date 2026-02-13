@@ -367,3 +367,15 @@ $ go get go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otel
 <br/>
 
 ### 88 - RabbitMQ Instrumentation
+
+<br/>
+
+## 14 - Reliability
+
+<br/>
+
+### 89 - Understanding DLQ and Retries
+
+<br/>
+
+### 90 - Implementing Message Retries
