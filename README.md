@@ -298,3 +298,35 @@ $ make generate-proto
 <br/>
 
 ### 76 - Declining a Trip Request
+
+<br/>
+
+## 12 - Payments
+
+<br/>
+
+### 77 - Payment Flow Overview
+
+<br/>
+
+### 78 - Payment Service setup
+
+<br/>
+
+### 79 - Adding the Stripe secret key
+
+<br/>
+
+### 80 - Stripe Processor Implementation
+
+```
+$ go get github.com/stripe/stripe-go/v81
+```
+
+<br/>
+
+### 81 - Listening to the Payment Event
+
+<br/>
+
+### 82 - Stripe Payment Webhook
