@@ -18,4 +18,18 @@ func NewService() *Service {
 	}
 }
 
-// TODO: REgister and unregister methods
+func (s *Service) FindAvailableDrivers(packageType string) []string {
+	var matchingDrivers []string
+
+	for _, driver := range s.drivers {
+		if driver.Driver.PackageSlug == packageType {
+			matchingDrivers = append(matchingDrivers, driver.Driver.Id)
+		}
+	}
+
+	if len(matchingDrivers) == 0 {
+		return []string{}
+	}
+
+	return matchingDrivers
+}

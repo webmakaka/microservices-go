@@ -208,3 +208,65 @@ $ make generate-proto
 ```
 $ make generate-proto
 ```
+
+<br/>
+
+## 10 - Asynchronous Communication
+
+<br/>
+
+### 59 - Setting up RabbitMQ
+
+<br/>
+
+```
+$ go get github.com/rabbitmq/amqp091-go
+```
+
+<br/>
+
+### 60 - Connecting to RabbitMQ
+
+<br/>
+
+### 61 - RabbitMQ Services Dependency
+
+<br/>
+
+### 62 - Publishing the First Message
+
+```
+$ make generate-proto
+```
+
+<br/>
+
+### 63 - Message Durability
+
+<br/>
+
+### 64 - Consuming Messages
+
+<br/>
+
+### 65 - Message Distribution & Acknowledgment
+
+<br/>
+
+### 66 - Fair Dispatch
+
+<br/>
+
+### 67 - The Pub - Sub Pattern
+
+<br/>
+
+### 68 - Implementing the Exchange & Topics flow
+
+<br/>
+
+### 69 - JSON Message Sending & Consuming
+
+<br/>
+
+### 70 - Finding a Suitable Driver
