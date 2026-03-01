@@ -78,13 +78,15 @@ $ curl \
 
 ## 06 - WebSockets
 
-### 35 - Understanding WebSockets
-
-### 36 - Implementing WebSocket connections
+<br/>
 
 ```
 $ go get github.com/gorilla/websocket
 ```
+
+### 35 - Understanding WebSockets
+
+### 36 - Implementing WebSocket connections
 
 <br/>
 
@@ -108,6 +110,10 @@ Connected (press CTRL+C to quit)
 <br/>
 
 ## 07 - Service Communication with gRPC
+
+```
+$ go get google.golang.org/grpc
+```
 
 <br/>
 
@@ -161,10 +167,6 @@ $ make generate-proto
 
 ### 41 - Implementing the Gateway Trip gRPC Client
 
-```
-$ go get google.golang.org/grpc
-```
-
 <br/>
 
 ### 42 - gRPC Server implementation on Trip Service
@@ -215,13 +217,13 @@ $ make generate-proto
 
 <br/>
 
-### 59 - Setting up RabbitMQ
-
-<br/>
-
 ```
 $ go get github.com/rabbitmq/amqp091-go
 ```
+
+<br/>
+
+### 59 - Setting up RabbitMQ
 
 <br/>
 
@@ -303,6 +305,10 @@ $ make generate-proto
 
 ## 12 - Payments
 
+```
+$ go get github.com/stripe/stripe-go/v81
+```
+
 <br/>
 
 ### 77 - Payment Flow Overview
@@ -319,10 +325,6 @@ $ make generate-proto
 
 ### 80 - Stripe Processor Implementation
 
-```
-$ go get github.com/stripe/stripe-go/v81
-```
-
 <br/>
 
 ### 81 - Listening to the Payment Event
@@ -330,3 +332,38 @@ $ go get github.com/stripe/stripe-go/v81
 <br/>
 
 ### 82 - Stripe Payment Webhook
+
+<br/>
+
+## 13 - Observability
+
+```
+$ go get go.opentelemetry.io/otel/sdk/trace
+$ go get go.opentelemetry.io/otel/exporters/jaeger
+$ go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
+$ go get go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc
+```
+
+<br/>
+
+### 83 - Intro to Distributed Tracing
+
+<br/>
+
+### 84 - Setting up Tracing
+
+<br/>
+
+### 85 - Jeager Exporter
+
+<br/>
+
+### 86 - HTTP Instrumentation
+
+<br/>
+
+### 87 - gRPC Instrumentation
+
+<br/>
+
+### 88 - RabbitMQ Instrumentation
