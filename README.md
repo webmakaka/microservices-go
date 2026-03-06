@@ -379,3 +379,15 @@ $ go get go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otel
 <br/>
 
 ### 90 - Implementing Message Retries
+
+
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
